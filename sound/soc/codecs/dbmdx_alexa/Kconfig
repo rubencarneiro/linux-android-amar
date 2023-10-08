@@ -1,0 +1,208 @@
+#
+# SoC audio configuration
+#
+
+config SND_SOC_DBMDX_ALEXA
+	bool "DSPG Voice Trigger/Enhancement Chip"
+	default n
+	help
+		DSPG Voice Trigger/Enhancement Chip
+
+config SND_SOC_DBMDX_AEC_REF_32_TO_16_BIT
+	bool "Reference I2S Line format for AEC is 16 out of 32 bit"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Reference I2S Line format for AEC
+		algorithm is  is 16 out of 32 bit
+		(alternative is 16 out of 16 bit)
+
+config SND_SOC_DBMDX_USE_ANALOG_MICS
+	bool "Microphones type is Analog"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Microphones type is Analog
+
+config SND_SOC_DBMDX_SAR_ADC_SELECT_MIC2
+	bool "Select SAR ADC MiC 2"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if SAR ADC Mic2 should be used
+
+
+config SND_SOC_DBMDX_DBMD2_DRIVES_DCLASS_SPEAKER
+	bool "DBMD2 Chip drives DCLASS speaker"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if DBMD2 chip drivers DCLASS speaker
+
+
+
+config SND_SOC_DBMDX_MELON_SAMPLES_BUF_IN_GA_MODE
+	bool "Samples in GA mode are provided via buffering"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Samples in GA mode are provided via buffering
+
+
+config SND_SOC_DBMDX_I2S_BUFFERING_SUPPORTED
+	bool "Audio buffer is provided via I2S connected to DBMD4"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Audio buffer is provided via I2S connected to DBMD4
+
+config SND_SOC_DBMDX_I2S_STREAMING_SUPPORTED
+	bool "Audio buffer is provided via I2S connected to DBMD2"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Audio buffer is provided via I2S connected to DBMD2
+
+config SND_SOC_DBMDX_VC_I2S_STREAMING_SUPPORTED
+	bool "Audio buffer is provided via I2S connected to DBMD2 in VC usecase"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Audio buffer is provided via I2S connected to DBMD2 in VC usecase
+
+config SND_SOC_DBMDX_VT_LOCAL_WHILE_VC_SUPPORTED
+	bool "Local Voice Trigger functionality During Voice Call"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Local Voice Trigger functionality During Voice Call is supported
+
+config SND_SOC_DBMDX_VT_CLOUD_WHILE_VC_SUPPORTED
+	bool "Cloud Voice Trigger functionality During Voice Call"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Cloud Voice Trigger functionality During Voice Call is supported
+
+config SND_SOC_DBMDX_VC_RX_PROCESS_SUPPORTED
+	bool "Voice Call RX processing"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if RX processing during Voice Call is supported
+
+config SND_SOC_DBMDX_VC_SRATE_16KHZ
+	bool "Voice Call Sample Rate is 16KHz"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Voice Call Sample Rate is 16KHz
+		Otherwise the sample rate is 48KHz
+
+config SND_SOC_DBMDX_MANGO_BARGEIN_USES_2_MICS
+	bool "Mango Barge In Usecase uses 2 mics"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Mango Barge In Usecase uses only two mics
+		Otherwise 3 mics will be used in Barge In Usecase
+
+config SND_SOC_DBMDX_MANGO_SRATE_16KHZ
+	bool "Mango Usecases Rate is 16KHz"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Mango Usecases Sample Rate is 16KHz
+		Otherwise the sample rate is 48KHz
+
+config SND_SOC_DBMDX_MELON_SRATE_48KHZ
+	bool "Melon Usecases Rate is 48KHz"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if Melon Usecases Sample Rate is 48Hz
+		Otherwise the sample rate is 16KHz
+
+config SND_SOC_DBMDX_VA_I2S_MASTER
+	bool "DBMD4/8i s I2S Master"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if DBMD4/8 is I2S Master
+
+config SND_SOC_DBMDX_VA_VE_I2S_MASTER
+	bool "DBMD2 is I2S Master"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if DBMD2 is TDM RX Master
+
+
+config SND_SOC_DBMDX_PSAD_SUPPORTED
+	bool "PSAD support"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Set if PSAD is supported
+
+config SND_SOC_DBMDX_I2S_CAPTURE_DEVICE
+	bool "DSPG I2S Capture Device Support"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		DSPG Capture Device Support
+
+config SND_SOC_DBMDX_SND_CAPTURE
+	bool "DSPG Capture Device Support"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Register DBMDX SOC as a separate sound card.
+		.
+		y - Register DBMDX SOC as separate sound card
+		n - Do not register DBMDX SOC as separate sound card
+
+config SND_SOC_DBMDX_OKG_WWE_SUPPORT
+	bool "Wake Word Detection Engine Is OKG"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Wake Word Detection Engine Is OKG
+
+
+config SND_SOC_DBMDX_SENSORY_WWE_SUPPORT
+	bool "Wake Word Detection Engine Is Sensory"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Wake Word Detection Engine Is Sensory
+
+config SND_SOC_DBMDX_ALEXA_WWE_SUPPORT
+	bool "Wake Word Detection Engine Is Alexa"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Wake Word Detection Engine Is Alexa
+
+config SND_SOC_DBMDX_BIXBY_WWE_SUPPORT
+	bool "Wake Word Detection Engine Is Bixby"
+	depends on SND_SOC_DBMDX
+	default n
+	help
+		Wake Word Detection Engine Is Bixby
+
+config SND_SOC_DBMDX_GENERAL_WWE_SUPPORT
+	bool "Wake Word Detection Engine Is General"
+	depends on SND_SOC_DBMDX
+	default n
+	help
+		Wake Word Detection Engine Is General
+
+
+config SND_SOC_DBMDX_USE_EVBS_CONFIG
+	bool "USE EVBS Rev B board config"
+	depends on SND_SOC_DBMDX_ALEXA
+	default n
+	help
+		Use EVBS RevB configuration
+
