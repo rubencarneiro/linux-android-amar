@@ -1,0 +1,6 @@
+linux-android-lenovo-x306f (0.0.0+git20231008141907.700be58.droidian) trixie; urgency=medium
+
+  * Initial commit
+  * Initial Push from Ubuntu Touch Modified kernel
+
+ -- Rúben Carneiro <rubencarneiro01@gmail.com>  Sun, 08 Oct 2023 15:19:07 +0100

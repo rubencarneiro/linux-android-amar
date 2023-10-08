@@ -920,7 +920,6 @@
 
 
 
-#include <amar_row_wifi/cust.dtsi>
 #include "mediatek/cust_mt8768_camera.dtsi"
 
 &msdc1 {
